@@ -1,0 +1,345 @@
+@import "reset"
+@import "mixin"
+@import "animations"
+
+$font-proxima-black: "ProximaNova-Black", sans-serif
+$font-proxima-semib: "ProximaNova-Semibold", sans-serif
+$font-aeroport: "Aeroport", sans-serif
+$font-aeroport-bold: "Aeroport-Bold", sans-serif
+
+$white: #FFF
+$green-btn: #00E19C
+$blue: #1B1786
+
+.animation__bounce-in-right
+  -webkit-animation: bounceInRight 1500ms linear 500ms both
+  animation: bounceInRight 1500ms linear 500ms both
+
+.animation__bounce-in-right2
+  -webkit-animation: bounceInRight 1500ms linear 1300ms both
+  animation: bounceInRight 1500ms linear 1300ms both
+
+.animation__bounce-in-top
+  -webkit-animation: bounceInUp 1500ms linear 2000ms both
+  animation: bounceInUp 1500ms linear 2000ms both
+
+.animation__off
+  +respond-to(tablet)
+    -webkit-animation: none
+    animation: none
+
+.container
+  max-width: 1565px
+  margin: auto
+  +respond-to(x-desktop)
+    max-width: 1261px
+
+.wrapper
+  background: url("../images/main-bg@2x.jpg") repeat-y 50% 0
+  height: 100vh
+  position: relative
+  overflow: hidden
+  +respond-to(small-tablet)
+    background: url("../images/mobile-main-bg.jpg") repeat
+
+.main
+  +respond-to(x-desktop)
+    height: 100vh
+    +flexbox
+    +flex-direction(column)
+    +justify-content(center)
+    padding: 63px 0 135px
+  +respond-to(tablet)
+    padding-bottom: 112px
+  +respond-to(small-tablet)
+    padding: 38px 0 0
+  .header
+    padding: 42px 0
+    +respond-to(x-desktop)
+      position: absolute
+      top: 30px
+      left: 20px
+      right: 20px
+      padding: 0
+    +respond-to(small-tablet)
+      top: 17px
+    &__logo
+      width: 253px
+      height: 32px
+      display: block
+      +respond-to(tablet)
+        margin: auto
+      +respond-to(small-tablet)
+        width: 159px
+        height: 21px
+      img
+        width: 100%
+
+  .stock
+    padding: 50px 0 35px
+    +respond-to(h-x-large)
+      padding-top: 150px
+    +respond-to(x-desktop)
+      padding: 0 20px
+    +respond-to(small-tablet)
+      margin-top: -10px
+      overflow: hidden
+    &__wrap
+      +flexbox
+      +justify-content(center)
+      +respond-to(small-tablet)
+        +flex-direction(column)
+        +align-items(center)
+
+    &__car-wrap
+      margin-left: -152px
+      +respond-to(x-desktop)
+        margin-left: 0
+        width: 60%
+      +respond-to(desktop)
+        width: 57%
+      +respond-to(tablet)
+        width: 66%
+      +respond-to(small-tablet)
+        width: 100%
+
+    &__car
+      width: 830px
+      margin-left: -36px
+      img
+        width: 100%
+      +respond-to(x-desktop)
+        margin-left: -45px
+        width: 100%
+      +respond-to(tablet)
+        margin-left: -35px
+      +respond-to(small-tablet)
+        display: none
+
+    &__description
+      max-width: 700px
+      +flexbox
+      +flex-direction(column)
+      +align-items(flex-start)
+      margin-top: 12px
+      +respond-to(x-desktop)
+        max-width: 43%
+        margin-left: -50px
+      +respond-to(desktop)
+        margin-left: -50px
+        max-width: 47%
+      +respond-to(tablet)
+        margin-left: -40px
+        max-width: 41%
+      +respond-to(small-tablet)
+        max-width: 100%
+        margin-left: 0
+        +align-items(center)
+        text-align: center
+      .mobile-car
+        display: none
+        +respond-to(small-tablet)
+          +flexbox
+          +justify-content(center)
+          margin: 40px auto -45px
+          img
+            min-width: 337px
+            max-width: 400px
+      &-title
+        font-size: 71px
+        line-height: 59px
+        font-family: $font-proxima-black
+        color: $white
+        text-transform: uppercase
+        +respond-to(x-desktop)
+          font-size: 65px
+        +respond-to(desktop)
+          font-size: 55px
+          line-height: 53px
+        +respond-to(tablet)
+          font-size: 37px
+          line-height: 37px
+        +respond-to(small-tablet)
+          font-size: 27px
+          line-height: 25px
+      &-subtitle
+        font-family: $font-aeroport
+        font-size: 29px
+        line-height: 29px
+        color: $white
+        text-transform: uppercase
+        margin-top: 40px
+        letter-spacing: -0.01em
+        +respond-to(x-desktop)
+          font-size: 25px
+          line-height: 25px
+        +respond-to(desktop)
+          font-size: 22px
+          line-height: 22px
+          margin-top: 30px
+        +respond-to(tablet)
+          margin-top: 20px
+          font-size: 18px
+          line-height: 19px
+        +respond-to(small-tablet)
+          margin-top: 14px
+          font-size: 17px
+          line-height: 18px
+      &-btn
+        font-family: $font-proxima-semib
+        font-size: 31px
+        line-height: 30px
+        letter-spacing: 0.02em
+        text-transform: uppercase
+        color: $blue
+        background: $green-btn
+        +transition(background,.4s,linear)
+        padding: 24px 55px 22px
+        margin-top: 45px
+        &:hover
+          background: $white
+        +respond-to(desktop)
+          margin-top: 30px
+          font-size: 25px
+          padding: 19px 45px 17px
+        +respond-to(tablet)
+          font-size: 20px
+          padding: 12px 35px 10px
+        +respond-to(small-tablet)
+          font-size: 23px
+          padding: 17px 60px 15px
+      &-details
+        font-size: 18px
+        font-family: $font-aeroport
+        color: $white
+        text-decoration: underline
+        margin-top: 56px
+        &:hover
+          text-decoration: none
+        +respond-to(x-desktop)
+          margin-top: 40px
+        +respond-to(desktop)
+          font-size: 16px
+          margin-top: 30px
+        +respond-to(tablet)
+          font-size: 14px
+          margin-top: 25px
+        +respond-to(small-tablet)
+          font-size: 12px
+          margin-top: 17px
+
+.prizes
+  background: url("../images/prizes-bg.jpg") repeat
+  padding: 37px 0 27px
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  +respond-to(x-desktop)
+    padding: 25px 20px 23px
+  +respond-to(desktop)
+    padding: 16px 20px 14px
+  +respond-to(small-tablet)
+    display: none
+  .stock__text
+    font-family: $font-aeroport-bold
+    font-size: 31px
+    color: $white
+    text-transform: uppercase
+    letter-spacing: 0.025em
+    position: absolute
+    bottom: 115%
+    left: 0
+    right: 0
+    max-width: 1565px
+    margin: auto
+    +respond-to(x-desktop)
+      font-size: 26px
+      max-width: 1261px
+    +respond-to(desktop)
+      left: 20px
+      right: 20px
+      font-size: 22px
+    +respond-to(tablet)
+      font-size: 18px
+  &__list
+    +flexbox
+    +justify-content(space-between)
+    .item-1
+      width: 22.6%
+      +respond-to(x-desktop)
+        width: 229px
+      +respond-to(tablet)
+        width: 195px
+      .prizes__item-img
+        width: 160px
+        +respond-to(x-desktop)
+          width: 120px
+      .prizes__item-title
+        width: 184px
+    .item-2
+      width: 21.8%
+      +respond-to(x-desktop)
+        width: 229px
+      +respond-to(tablet)
+        width: 188px
+      .prizes__item-img
+        width: 151px
+        +respond-to(x-desktop)
+          width: 100px
+      .prizes__item-title
+        width: 150px
+        +respond-to(x-desktop)
+          width: 117px
+        +respond-to(tablet)
+          width: 122px
+          margin-left: 5px
+    .item-3
+      width: 18.9%
+      +respond-to(x-desktop)
+        width: 210px
+      +respond-to(tablet)
+        width: 147px
+      .prizes__item-img
+        width: 64px
+        +respond-to(x-desktop)
+          width: 40px
+      .prizes__item-title
+        width: 192px
+        +respond-to(x-desktop)
+          width: 157px
+        +respond-to(tablet)
+          width: 135px
+          margin-left: 6px
+    .item-4
+      width: 22.4%
+      +respond-to(x-desktop)
+        margin-left: -20px
+        width: 214px
+      +respond-to(tablet)
+        width: 175px
+      .prizes__item-img
+        width: 176px
+      .prizes__item-title
+        width: 152px
+  &__item
+    +flexbox
+    +justify-content(space-between)
+    +align-items(center)
+    &-img
+      img
+        max-width: 100%
+    &-title
+      font-family: $font-aeroport-bold
+      font-size: 21px
+      line-height: 24px
+      letter-spacing: 0.02em
+      color: $white
+      text-transform: uppercase
+      width: 184px
+      +respond-to(x-desktop)
+        font-size: 16px
+        line-height: 18px
+      +respond-to(tablet)
+        font-size: 14px
+        line-height: 15px

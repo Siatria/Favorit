@@ -1,0 +1,81 @@
+=transition($property, $duration, $timing)
+  -webkit-transition: $property $duration $timing
+  -moz-transition: $property $duration $timing
+  -o-transition: $property $duration $timing
+  transition: $property $duration $timing
+
+=flexbox
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+
+=justify-content($value)
+  -webkit-box-pack: $value
+  -moz-box-pack: $value
+  -ms-flex-pack: $value
+  -webkit-justify-content: $value
+  justify-content: $value
+
+=align-items($value)
+  -webkit-box-align: $value
+  -webkit-align-items: $value
+  -ms-flex-align: $value
+  align-items: $value
+
+=flex-direction($value)
+  -webkit-box-direction: normal
+  -webkit-box-orient: vertical
+  -moz-box-direction: normal
+  -moz-box-orient: vertical
+  -webkit-flex-direction: $value
+  -ms-flex-direction: $value
+  flex-direction: $value
+
+// width breakpoints
+$w-ex-small: 500px
+$w-small: 768px
+$w-medium: 992px
+$w-large: 1300px
+$w-x-large: 1600px
+$w-xx-large: 2000px
+
+// height breakpoint
+$h-x-large: 1200px
+
+=respond-to($media)
+  @if $media == mobile
+    @media only screen and (max-width: $w-ex-small)
+      @content
+  @else if $media == small-tablet
+    @media only screen and (max-width: $w-small - 1px)
+      @content
+  @else if $media == tablet
+    @media only screen and (max-width: $w-medium)
+      @content
+  @else if $media == desktop
+    @media only screen and (max-width: $w-large)
+      @content
+  @else if $media == x-desktop
+    @media only screen and (max-width: $w-x-large)
+      @content
+  @else if $media == xx-desktop
+    @media only screen and (min-width: $w-xx-large)
+      @content
+
+  @else if $media == h-x-large
+    @media only screen and (min-height: $h-x-large)
+      @content
+
+
+// animations
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
